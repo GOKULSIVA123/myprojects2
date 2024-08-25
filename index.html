@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmo Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            width:100%;
+            height:100vh;
+            position: relative;
+
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:7px;
+            box-shadow: rgba(50,50,70,0.5) 5px 5px 10px;
+        }
+        .navbar {
+            display: flex;
+            column-gap: 20px;
+
+        }
+        .navbar a{
+            font-family:Arial, Helvetica, sans-serif;
+            color:#1D232C;
+            text-decoration: none;
+        }
+        .navbar a:hover{
+            text-decoration: underline;
+        }
+        .navicons{
+            display:none;
+        }
+        .header-image:hover{
+            width:400px;
+            transition: 0.15s;
+        }
+        @media screen and (max-width:600px){
+            .navicons{
+                display:block;
+            }
+            .navbar a{
+                display: none;
+            }
+            .header-image{
+                display: none;
+            }
+            .service-container{
+                display: none;
+                color:white;
+            }
+            .service-container2{
+                flex-direction: column;
+            }
+        }
+        .sidenavbar{
+            background-color: #1D232C;
+            width: 50%;
+            height: 100%;
+            position: fixed;
+            top:0;
+            left: -60%;
+            padding: 10px;
+            color:white;
+            transition: 2s;
+        }
+        .sidelinks{
+            margin-bottom: 400px;
+            
+            
+        }
+        .sidelinks a{
+            text-decoration: none;
+            color:white;
+          
+        }
+        .sidelinks a:hover{
+            text-decoration: underline;
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:50px;
+            padding: 50px;
+        }
+        .header-button{
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            background-color: #1D232C;
+            color: white;
+            cursor: pointer;
+            object-fit: cover;
+        }
+        .header-button:hover{
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .header-image{
+            position: absolute;
+            top:150px;
+            left:600px;
+            object-fit: cover;
+            object-position: top;
+        }
+        .header-details{
+            position: absolute;
+            top:130px;
+            left:320px
+        }
+        .service{
+            position: absolute;
+            top:450px;
+        }
+        .service-container{
+            width:1250px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .service-container2{
+            display: flex;
+            justify-content: space-between;
+            padding:40px;
+            background-color: #1D232C;
+            color: white;
+        }
+        .newarrival{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        }
+        .newarrival img{
+            object-fit: cover;
+            object-position:center;
+        }
+        .newarrival img:hover{
+            width: 350px;
+            justify-content: space-between;
+            transition: 0.15s;
+        }
+        .newarrival button:hover{
+            color: white;
+            background-color: #1D232C;
+        }
+        .newarrival-container1{
+        flex-basis: 20%;
+        }
+        .newarrival button{
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        margin-top: 5px;
+        color: #1D232C;
+        position:relative;
+        top:-100px;
+        left:53px;
+        border-radius: 10px;
+        border: none;
+        }
+        .news{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:9px;
+        }
+        .news input{
+        padding:11px;
+        width:80vw;
+        margin-bottom: 10px;
+        border: solid 3px;
+        }
+        .news button{
+        background-color: #1D232C;
+        color:white;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        }
+        .footer{
+        background-color: #1D232C;
+        color: white;
+        padding: 30px;
+        margin-top: 20px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>COSMO</h1>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="#">Contact Details</a>
+    </div>
+    <div class="navicons" onclick="shownav()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    </nav>
+    <div class="sidenavbar">
+        <p style="text-align: right;">
+            <i  class="fa-solid fa-xmark"onclick="closenav()"></i>
+            </p>
+            <div class="sidelinks">
+                <p><a href="#">Home</a></p>
+                <p><a href="collections.html">Collections</a></p>
+                <p><a href="#">Contact Details</a></p>
+            </div>
+        </p>
+    </div>
+    <div class="header">
+        <div class="header-details">
+            <h1>Level your style</h1>
+            <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">with our stunning fashion</p>
+            <button class="header-button">shop now</button>
+        </div>
+        <div>
+            <img class="header-image"src="fashion.jpg" width="300px" height="300px">
+        </div>
+    </div>
+    <div class="service">
+        <div class="service-container">
+            <div>
+                <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">We provide Best</h2>
+                <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Customer Experience</h2>
+                
+            </div>
+            <div class="service-containers2">
+                <p style="font-family: Arial, Helvetica, sans-serif;">|| we ensure that customer have the best shopping experience</p>
+            </div>
+        </div>
+        <div class="service-container2">
+            <div>
+                <i class="fa-regular fa-face-smile"></i>
+                <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Satisfaction Guarantee</h3>
+                <p style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+                    A satisfaction guarantee in fashion ensures that<br>
+                    customers are delighted with their purchases.</p>
+            </div>
+            <div class="service-container3">
+                <div>
+                <i class="fa-regular fa-face-smile"></i>
+                <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">New Arrival Everyday</h3>
+                <p style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+                    A satisfaction guarantee in fashion ensures that<br>
+                    customers are delighted with their purchases.</p>
+                </div>
+            </div>
+                        <div class="service-container4">
+                <div>
+                <i class="fa-regular fa-face-smile"></i>
+                <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Fast and Free Shipping Everyday</h3>
+                <p style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+                    A satisfaction guarantee in fashion ensures that<br>
+                    customers are delighted with their purchases.</p>
+                </div>
+            </div>
+        </div>
+
+    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">New Arrival</h2>
+    <div class="newarrival">
+        <div clas="newarrival-container1">
+            <img src="fashion1.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="fashion2.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="fashion6.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="fashion4.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Most Wanted</h2>
+    <div class="newarrival">
+        <div clas="newarrival-container1">
+            <img src="fashion1.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="fashion2.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="fashion6.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="fashion4.jpg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+            <img src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="270px" height="270px">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+    <div class="news">
+    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Join Our News Letter</h2>
+    <p style="font-family: Arial, Helvetica, sans-serif;">Sign Up our email newsletter to get exclusive discounts and updates and more</p>
+    <input type="text" class="search">
+    <div>
+    <button>Subscribe</button>
+    </div>
+    </div>
+    <div class="footer">
+    <div class="footer-container">
+    <div class="footer-box1">
+    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"headingtext">Cosmo</h2>
+    <p style="font-family: Arial, Helvetica, sans-serif;"> A satisfaction guarantee in fashion ensures that<br>
+        customers are delighted with their purchases.</p>
+    <div>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-linkedin"></i>
+    <p style="font-family: Arial, Helvetica, sans-serif;">@2024 cosmo.com</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+    var  sidenav=document.querySelector(".sidenavbar")
+    function shownav(){
+        sidenav.style.left="0"
+    }
+    function closenav(){
+        sidenav.style.left="-60%"
+    }
+    </script>
+
+</body>
+</html>
